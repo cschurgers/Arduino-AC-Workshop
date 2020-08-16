@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage">
+
+<!-- Mirrored from sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Aug 2020 02:43:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",
+d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials","deleted":false,"title":"Advanced Tutorials","dir":"ltr"},{"path":"/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth","deleted":false,"title":"Bluetooth","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://717691200-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED_WITH_INDICATOR","siteTitle":"Arduino AC Workshop","jot2atari":{"eligibility":"ineligible"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"skipMigratedSitesCallForConsumer":false,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":false,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/dc264e/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/dc264e/system/js/codemirror.js","../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/css/codemirror_css.css","../../../../../ssl.gstatic.com/sites/p/dc264e/system/js/trog_edit__en.js","../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/css/trogedit.css","../_/rsrc/1597098552000/system/app/css/editor.css","../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/css/codeeditor.css","/a/eng.ucsd.edu/arduino-ac-workshop/_/rsrc/1597098552000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"eng.ucsd.edu","baseUri":"/a/eng.ucsd.edu/arduino-ac-workshop","name":"arduino-ac-workshop","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/advanced-tutorials","parentWuid":"wuid:gx:81f17026e164d8b","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Bluetooth","locale":"en","wuid":"wuid:gx:46aefde48322c268","revision":1,"path":"/advanced-tutorials/bluetooth","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"bluetooth","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/tutorials/ble","title":"BLE"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","onePickToken":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/a/eng.ucsd.edu/arduino-ac-workshop/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Bluetooth - Arduino AC Workshop" />
+<meta itemprop="name" content="Bluetooth - Arduino AC Workshop" />
+<meta property="og:title" content="Bluetooth - Arduino AC Workshop" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../../ssl.gstatic.com/sites/p/dc264e/system/app/themes/simplywhite/standard-css-simplywhite-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1597098552000/system/app/css/overlay597f.css?cb=simplywhite25a150200goog-ws-leftnone30topstandard" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1597098552000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/a/eng.ucsd.edu/arduino%2dac%2dworkshop/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Bluetooth - Arduino AC Workshop</title>
+<meta itemprop="image" content="https://sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/_/rsrc/1526109901319/advanced-tutorials/bluetooth/61E-UJSdZBL._SL1000_.jpg?height=128&amp;width=200" />
+<meta property="og:image" content="https://sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/_/rsrc/1526109901319/advanced-tutorials/bluetooth/61E-UJSdZBL._SL1000_.jpg?height=128&amp;width=200" />
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="sites-chrome-header-valign-top" style="height: 150px"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox sites-chrome-header-valign-top "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left initial" style="width:200px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_5779192475161603" class="sites-embed" role="navigation"><h4 class="sites-embed-title">Navigation Menu</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotId="navList" class="has-expander"><li class="topLevel nav-first "><div dir="ltr" style="padding-left: 19px;"><a href="../home_.html" jotId="wuid:gx:408eacf319ff9742" class="sites-navigation-link topLevel">Home</a></div></li><li class="topLevel parent " wuid="gx:71abc0772e29572e"><div dir="ltr" style="padding-left: 0px;"><div class="expander"></div><a href="../introduction.html" jotId="wuid:gx:71abc0772e29572e" class="sites-navigation-link topLevel">Introduction</a></div><ul role="navigation" class="has-expander"><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../what-is-arduino.html" jotId="wuid:gx:4fe744c15061ca95" class="sites-navigation-link">Arduino</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../breadboard.html" jotId="wuid:gx:6514d674f8645b74" class="sites-navigation-link">Breadboard</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../resistors.html" jotId="wuid:gx:641201f761f5a299" class="sites-navigation-link">Resistors</a></div></li></ul></li><li class="topLevel parent " wuid="gx:99a839603c31007"><div dir="ltr" style="padding-left: 0px;"><div class="expander"></div><a href="../tutorials.html" jotId="wuid:gx:99a839603c31007" class="sites-navigation-link topLevel">Basic Tutorials</a></div><ul role="navigation" class="has-expander"><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../tutorials/led.html" jotId="wuid:gx:12af32eada1bf8dc" class="sites-navigation-link">LED Blink</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../tutorials/led-fade.html" jotId="wuid:gx:27811491a25975b5" class="sites-navigation-link">LED Fade</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../tutorials/button.html" jotId="wuid:gx:7a8b1bfc2e4f0c1c" class="sites-navigation-link">Button</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../tutorials/serialforwarder.html" jotId="wuid:gx:b5a6a39d80d27e5" class="sites-navigation-link">SerialForwarder</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="../tutorials/photocell.html" jotId="wuid:gx:eb43ed62d057ced" class="sites-navigation-link">Photocell</a></div></li></ul></li><li class="topLevel parent " wuid="gx:81f17026e164d8b"><div dir="ltr" style="padding-left: 0px;"><div class="expander"></div><a href="../advanced-tutorials.html" jotId="wuid:gx:81f17026e164d8b" class="sites-navigation-link topLevel">Advanced Tutorials</a></div><ul role="navigation" class="has-expander"><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="button-version-2.html" jotId="wuid:gx:7feac67ef63fcc9a" class="sites-navigation-link">Button with pullup</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="servo.html" jotId="wuid:gx:7e4dabc7da2b3418" class="sites-navigation-link">Servo</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="buzzer.html" jotId="wuid:gx:2f18eb5bd47f7a66" class="sites-navigation-link">Buzzer</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="potentiometer.html" jotId="wuid:gx:37a487a1d82f2145" class="sites-navigation-link">Potentiometer</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="distance-sensor.html" jotId="wuid:gx:5ae6ce15799cb0f0" class="sites-navigation-link">Distance sensor</a></div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="motor.html" jotId="wuid:gx:daf3b57f065214e" class="sites-navigation-link">Motor</a></div></li><li class=""><div class="current-bg" jotId="wuid:gx:46aefde48322c268" dir="ltr" style="padding-left: 38px;">Bluetooth</div></li><li class=""><div dir="ltr" style="padding-left: 38px;"><a href="appinventor.html" jotId="wuid:gx:15eac34102f03bf1" class="sites-navigation-link">AppInventor</a></div></li></ul></li></ul></div></div>
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+<A href="../advanced-tutorials.html" dir="ltr">Advanced Tutorials</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Bluetooth</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div>
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px;table-layout:fixed">
+<tbody>
+<tr>
+<td style="width:17px;height:21px"><br />
+</td>
+<td style="height:21px"> </td>
+</tr>
+<tr>
+<td style="width:17px;height:87px"> </td>
+<td style="background-color:rgb(200,200,200);border:4px solid rgb(0,0,139);height:87px">
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:16px;height:61px"> </td>
+<td style="width:718px">
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:256px;height:17px"><br />
+</td>
+<td style="height:17px"> </td>
+</tr>
+<tr>
+<td style="width:256px;height:40px">
+<div style="text-align:center">
+<div style="text-align:center"><b><font size="5"><span style="color:rgb(0,0,255)">Bluetooth Module  </span></font></b><br />
+</div>
+</div>
+<div style="text-align:center">
+<div style="text-align:center"><b><font size="5"><span style="color:rgb(0,0,255)"><font size="3">Wireless Communication</font></span></font></b><br />
+</div>
+<b><font size="5">
+</font></b></div>
+</td>
+<td style="height:40px"><font size="3">The Bluetooth module lets you communicate with any BT capable device. This is particularly useful to interface with a mobile phone.</font><br />
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+</div>
+<div><font size="3"><font size="3"><font size="3">
+</font></font></font><font size="3">
+</font><font size="3"><font size="3">
+<div style="display:inline;float:left;margin:5px 10px 0px 0px"><a href="../../../../../6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth/61E-UJSdZBL._SL1000_e0db.jpg?attredirects=0" imageanchor="1"><img border="0" height="128" src="../_/rsrc/1526109901319/advanced-tutorials/bluetooth/61E-UJSdZBL._SL1000_cd50.jpg?height=128&amp;width=200" width="200" /></a></div>
+</font></font><font size="3"><font size="3">
+<div style="display:inline;float:right;margin:5px 10px"><a href="../../../../../6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth/BT_Bidirff23.png?attredirects=0" imageanchor="1"><img border="0" height="320" src="../_/rsrc/1526109901319/advanced-tutorials/bluetooth/BT_Bidir2fba.png?height=320&amp;width=180" width="180" /></a></div>
+</font></font><font size="3"><font size="3">
+<div style="display:inline;float:right;margin:5px 10px"><a href="../../../../../6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth/BT_remote49fb.png?attredirects=0" imageanchor="1"><img border="0" height="320" src="../_/rsrc/1526109901319/advanced-tutorials/bluetooth/BT_remote2fba.png?height=320&amp;width=180" width="180" /></a></div>
+</font></font><font size="3"><font size="3">Bluetooth is a wireless communication technology that allows devices to talk with each ot</font></font><font size="3"><font size="3">her in an efficient way. </font>We will be using the HC-06 module shown on the left to add Bluetooth capabilities to our Arduino. In this tutorial, we focus specifically on communicating with mobile phones, but the Arduino code examples are useful starting points for other applications as well. For example, you could interface wirelessly with a computer, as detailed in <a href="http://www.instructables.com/id/Add-bluetooth-to-your-Arduino-project-ArduinoHC-06/" rel="nofollow">this instructable</a>.<br />
+<br />
+</font></div>
+<div><font size="3">The schematic below shows how to connect the Bluetooth module to the Arduino. Note that you have to use these exact same pins, specifically pin 0 and pin 1. The reason is that these pins are used by the Arduino for serial communication, which is used to communicate with the module.<br />
+</font><br />
+<table border="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="width:17px;height:232px"><br />
+</td>
+<td style="width:739px;height:232px"> 
+<div style="display:block;text-align:center;margin-right:auto;margin-left:auto"><a href="../../../../../6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth/BT_schematic_uno_bb9bc1.png?attredirects=0" imageanchor="1"><img border="0" height="191" src="../_/rsrc/1526109901319/advanced-tutorials/bluetooth/BT_schematic_uno_bbf07d.png?height=191&amp;width=400" width="400" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<font size="3">In this tutorial, we limit ourselves to communicating with </font><font size="3"><font size="3"><b><span style="color:rgb(0,0,255)">Android phone apps</span></b></font>.Below, there are two example projects to get you started, each with a pre-built app. The first example, called <i><b>Remote Control</b></i>,
+ has an app that tells the Arduino when up/down/left/right arrow keys 
+were pressed. As the name suggests, it is useful to make your phone into
+ a remote for your project. The second example, called <i><b>Bi-Directional</b></i>,
+ allows you to send information from the phone to the Arduino, but also 
+to send information back and display it on the phone. Screenshots of 
+these two apps are shown on the right above. </font><font size="3">The two example Android apps were built using a tool 
+called MIT AppInventor. If you would like to modify them or create your 
+own apps, you can go through the </font><font size="3"><font size="3"><font size="3"><a href="appinventor.html">AppInventor Tutorial</a>.</font></font> </font><font size="3"><font size="3"><br />
+</font></font><font size="3"><br />
+</font></div>
+<div><font size="3">For each example, you <b><span style="color:rgb(0,0,255)">install the app</span></b> as follows:</font><br />
+<font size="3">
+</font>
+</div>
+<ol><li><font size="3"><font size="3">Download the app (given as an <span style="color:rgb(0,0,0)">.ap</span></font></font><font size="3"><font size="3"><span style="color:rgb(0,0,0)">k file</span>) to the Android phone. It is possible you </font></font><font size="3"><span>have to change your phone's settings: under Settings – Security – Unknown
+sources needs to be marked off.</span></font></li>
+<li><font size="3">Upload the Arduino code (and have the Arduino on with the Bluetooth module connected).</font></li>
+<li><font size="3">Make sure Bluetooth is enabled on your phone. Start the app. When the app is active, it will have a "Connect to Bluetooth Module" button at the top. Click it to select the Bluetooth device to connect to (it will show a multi-digit address, which typically contains "HC").</font><font size="3"> If you find the correct device in the list, but the app fails to connect, just retry. Note that it is possible you need to pair the module with your phone first, using your phone's settings menu. <br />
+</font></li>
+</ol>
+<div><font size="3"><font size="3">
+</font></font><br />
+<br />
+<div><font size="4"><span style="color:rgb(32,18,77)">Remote Control</span></font>
+</div>
+<br />
+</div>
+<div><font size="3">The remote control app has four arrow buttons, and sends a message to the Arduino when an arrow is pressed and when it is released. </font><font size="3"><font size="3">The central button toggles modes (between 1 and 2), and this is also communicated to the Arduino.</font> As you can see in the Arduino code, each message has its own code. The schematic above shows how to connect the Bluetooth module to the Arduino (no other components are needed for this example).<br />
+<br />
+To install the remote control app, download <a href="https://6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/Tutorial_BT_Remote.apk?attachauth=ANoY7cqMGLHbLInuTkd_dIiWq64wCAL4U-K0KvdgPIyA2lYm31hHXIysk_T1KhA1Sog3Uo374m_jqDRA3EcXrwPrZ_Jnzz4gboe0D55et-53a0d7b3vFaZMOSMiffa3F1VrPMkFjRfym1MkGpwBRfSBNThYZvdtwN4EgxaXOPqTYdwEIhIHOBigXLNrC5e-1Q4Suop_DS_LGKHbBnINbKgmpsKaRFzCl4Dti6YDpbJDMaj1OneKlzc8%3D&amp;attredirects=0&amp;d=1">Tutorial_BT_Remote.apk</a> and follow the procedure described above.</font><font size="3"> The Arduino code is shown below.</font><br />
+<font size="3">
+</font>
+</div>
+<div></div>
+<br />
+<div><br />
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:17px;height:408px"> </td>
+<td style="border:4px solid rgb(0,0,139);width:740px;height:408px">
+<div style="overflow:auto;height:400px;width:740px">
+<pre style="color:#000000;background:#ffffff"><span style="color:#3f5fbf">/**********************************************************************************</span>
+<span style="color:#3f5fbf">   Bluetooth Tutorial Remote</span>
+<span style="color:#3f5fbf">   </span>
+<span style="color:#3f5fbf">   This tutorial demonstrates how use an Android phone as a remote to control the Arduino.</span>
+<span style="color:#3f5fbf">   This code provides a framework to work with a precoded remote control app. Information</span>
+<span style="color:#3f5fbf">   only flows from the app to the Arduino.</span>
+
+<span style="color:#3f5fbf">   The app sends a message to the Arduino when one of the arrows was pressed and when it</span>
+<span style="color:#3f5fbf">   was released. The central button toggles states, and this is also communicated</span>
+<span style="color:#3f5fbf">   to the Arduino.</span>
+<span style="color:#3f5fbf">   </span>
+<span style="color:#3f5fbf">  Connect the Rx of the Bluetooth module to the Tx (pin 1) of the arduino and vice versa</span>
+
+<span style="color:#3f5fbf">***********************************************************************************/</span>
+
+
+<span style="color:#696969">// Include this library to read Bluetooth from serial</span>
+<span style="color:#004a43">#</span><span style="color:#004a43">include </span><span style="color:#800000">&lt;</span><span style="color:#40015a">SoftwareSerial.h</span><span style="color:#800000">&gt;</span><span style="color:#004a43">                     </span>
+
+<span style="color:#800000;font-weight:bold">const</span> <span style="color:#800000;font-weight:bold">int</span> ledPin    <span style="color:#808030">=</span> <span style="color:#008c00">13</span><span style="color:#800080">;</span>                                                  
+
+SoftwareSerial mySerial<span style="color:#808030">(</span><span style="color:#008c00">0</span><span style="color:#808030">,</span><span style="color:#008c00">1</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+
+
+<span style="color:#696969">// Setup code</span>
+<span style="color:#800000;font-weight:bold">void</span> setup<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">{</span>
+
+  mySerial<span style="color:#808030">.</span>begin<span style="color:#808030">(</span><span style="color:#008c00">9600</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+  Serial<span style="color:#808030">.</span>begin<span style="color:#808030">(</span><span style="color:#008c00">9600</span><span style="color:#808030">)</span><span style="color:#800080">;</span>                     <span style="color:#696969">// You can run the serial monitor at the same time</span>
+
+  pinMode<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> OUTPUT<span style="color:#808030">)</span><span style="color:#800080">;</span>  
+  digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> LOW<span style="color:#808030">)</span><span style="color:#800080">;</span>
+  
+<span style="color:#800080">}</span>
+
+
+<span style="color:#696969">// Read the data coming in via Serial (i.e., from the Bluetooth module)</span>
+<span style="color:#603000">String</span> readFromModule<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+
+  <span style="color:#603000">String</span> msg <span style="color:#808030">=</span> <span style="color:#800000">"</span><span style="color:#800000">"</span><span style="color:#800080">;</span>
+    
+  <span style="color:#800000;font-weight:bold">while</span><span style="color:#808030">(</span>mySerial<span style="color:#808030">.</span>available<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+    digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> HIGH<span style="color:#808030">)</span><span style="color:#800080">;</span>
+    delay<span style="color:#808030">(</span><span style="color:#008c00">10</span><span style="color:#808030">)</span><span style="color:#800080">;</span>                                    <span style="color:#696969">// For program stability</span>
+    <span style="color:#800000;font-weight:bold">int</span> c <span style="color:#808030">=</span> mySerial<span style="color:#808030">.</span>read<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+    digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> LOW<span style="color:#808030">)</span><span style="color:#800080">;</span>
+    msg <span style="color:#808030">+</span><span style="color:#808030">=</span> <span style="color:#808030">(</span><span style="color:#800000;font-weight:bold">char</span><span style="color:#808030">)</span> c<span style="color:#800080">;</span>  
+  <span style="color:#800080">}</span>
+  delay<span style="color:#808030">(</span><span style="color:#008c00">10</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+  <span style="color:#800000;font-weight:bold">return</span> msg<span style="color:#800080">;</span>
+<span style="color:#800080">}</span>
+
+
+<span style="color:#696969">// Main program loop</span>
+<span style="color:#800000;font-weight:bold">void</span> loop<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+
+  <span style="color:#603000">String</span> message<span style="color:#800080">;</span>
+  
+  <span style="color:#696969">// Check for a Bluetooth message</span>
+  message <span style="color:#808030">=</span> readFromModule<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+  
+  <span style="color:#696969">// If a message was received, check the message and act accordingly</span>
+  <span style="color:#800000;font-weight:bold">while</span> <span style="color:#808030">(</span>message<span style="color:#808030">.</span>length<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#808030">&gt;</span> <span style="color:#008c00">0</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+
+      <span style="color:#800000;font-weight:bold">char</span> m <span style="color:#808030">=</span> message<span style="color:#808030">.</span>charAt<span style="color:#808030">(</span><span style="color:#008c00">0</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      message<span style="color:#808030">.</span>remove<span style="color:#808030">(</span><span style="color:#008c00">0</span><span style="color:#808030">,</span><span style="color:#008c00">1</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      
+      <span style="color:#800000;font-weight:bold">if</span><span style="color:#808030">(</span> m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'U'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Up arrow pressed</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'u'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Up arrow released</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span><span style="color:#808030">(</span> m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'D'</span><span style="color:#808030">)</span> 
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Down arrow pressed</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'d'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Down arrow released</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span><span style="color:#808030">(</span> m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'R'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Right arrow pressed</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'r'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Right arrow released</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span><span style="color:#808030">(</span> m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'L'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Left arrow pressed</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'l'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Left arrow released</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span> 
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'M'</span><span style="color:#808030">)</span>
+        Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Center button pressed to switch to mode 1</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>m <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#0000e6">'m'</span><span style="color:#808030">)</span>
+         Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span><span style="color:#800000">"</span><span style="color:#0f69ff">\t</span><span style="color:#0000e6"> Center button pressed to switch to mode 2</span><span style="color:#800000">"</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+  <span style="color:#800080">}</span>
+  
+ 
+         
+   
+<span style="color:#800080">}</span> <span style="color:#696969">// End of the main program loop</span>
+</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+<br />
+<div><font size="4"><span style="color:rgb(32,18,77)">Bi-Directional<br />
+</span></font></div>
+<font size="4"><span style="color:rgb(32,18,77)"><br />
+</span></font></div>
+<div><font size="3"><span style="color:rgb(32,18,77)"><font size="3"><font color="#000000">This app allows you to send information from the phone to the Arduino, but also in the other direction. The Arduino is set up the same way as in the <a href="../tutorials/photocell.html">Photocell Tutorial</a>, but any other analog sensor connected to pin A2 would work as well (the schematic below is a repeat of that tutorial and shows how to attach the photocell; note that you also need to connect the Bluetooth model as shown in the schematic above). The Arduino reads the sensor value and sends it to the app to display (note that an extra leading space was added to compensate for occasional character drops at the start of the BT communication; the app code gets rid of any leading empty spaces). The app also has two buttons to turn the internal LED of the Arduino on or off. </font></font></span><br /><br />
+To install the app, downloa</font><font size="3"><font size="3">d <a href="https://6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/Tutorial_BT_BiDir.apk?attachauth=ANoY7cqbApzyyvanj5TpTGKaorOpsjsd60Olw-Hwi_cPWaXcqUElQQAdZgznkZQlYs0p4sGpLRg8NvqTiwptDcnVJqs2nQLT9qumT5qefeBeOF5GHwYFZXZLamlxhgCFGCPg1hTjaN1AiOOvJIV_-EwwS7WzG3RjWqBSp2YBFGoAZO-peaad6uH3p-ZGJgPiTB40Y_YBlXl8bFsOdvzqIQ7urpgTLsINcgqRDHAzG8CG5zbGfgXVDWQ%3D&amp;attredirects=0&amp;d=1">Tutorial_BT_BiDir.apk</a> a</font>nd follow the procedure described earlier.</font><font size="3"> The Arduino code is shown below.</font><br /><font size="3">
+</font>
+</div><div><div><font size="3">
+</font></div>
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px" width="760px">
+<tbody>
+<tr>
+<td style="width:17px;height:277px"><br />
+</td>
+<td style="height:277px"> 
+<div style="display:block;text-align:left"><a href="../../../../../6b622cd8-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth/Tutorial_Photocell_uno_bb2bf0.png?attredirects=0" imageanchor="1"><img border="0" height="276" src="../_/rsrc/1526109901319/advanced-tutorials/bluetooth/Tutorial_Photocell_uno_bba9f8.png?height=276&amp;width=320" width="320" /></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<table border="0" bordercolor="#888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px">
+<tbody>
+<tr>
+<td style="width:17px;height:408px"> </td>
+<td style="border:4px solid rgb(0,0,139);width:740px;height:408px">
+<div style="overflow:auto;height:400px;width:740px"><span style="color:#3f5fbf">
+</span>
+<pre style="color:#000000;background:#ffffff"><span style="color:#3f5fbf">/**********************************************************************************</span>
+<span style="color:#3f5fbf">   Bluetooth Tutorial Bidirectional communication</span>
+<span style="color:#3f5fbf">   </span>
+<span style="color:#3f5fbf">   This tutorial demonstrates how to send information between an Andriod app and the </span>
+<span style="color:#3f5fbf">   Arduino (with a Bluetooth module). </span>
+<span style="color:#3f5fbf">   </span>
+<span style="color:#3f5fbf">   From the app to the Arduino:   Two buttons in the app are used to control </span>
+<span style="color:#3f5fbf">                                  the built-in LED on the Arduino, connected to pin 13.</span>
+<span style="color:#3f5fbf">   From the Arduino to the app:   An analog sensor value is read from pin A2 and sent </span>
+<span style="color:#3f5fbf">                                  to the app (there is an option to fake this sensor </span>
+<span style="color:#3f5fbf">                                  value with a counter).</span>
+
+<span style="color:#3f5fbf">  Connect the Rx of the Bluetooth module to the Tx (pin 1) of the arduino and vice versa</span>
+
+<span style="color:#3f5fbf">***********************************************************************************/</span>
+
+<span style="color:#696969">// Include this library to read Bluetooth from serial</span>
+<span style="color:#004a43">#</span><span style="color:#004a43">include </span><span style="color:#800000">&lt;</span><span style="color:#40015a">SoftwareSerial.h</span><span style="color:#800000">&gt;</span><span style="color:#004a43">                     </span>
+
+
+<span style="color:#696969">// If DEBUG is set to 'false', it will read a sensor value from one of the analog pins</span>
+<span style="color:#696969">// if DEBUG is set to 'true', it will fake a sensor value by using a counter, and no sensor needs to be connected</span>
+<span style="color:#004a43">#</span><span style="color:#004a43">define</span><span style="color:#004a43"> DEBUG   true</span>
+
+
+<span style="color:#800000;font-weight:bold">const</span> <span style="color:#800000;font-weight:bold">int</span> ledPin    <span style="color:#808030">=</span> <span style="color:#008c00">13</span><span style="color:#800080">;</span>                                                  
+<span style="color:#800000;font-weight:bold">const</span> <span style="color:#800000;font-weight:bold">int</span> sensorPin <span style="color:#808030">=</span> A2<span style="color:#800080">;</span>
+
+<span style="color:#800000;font-weight:bold">int</span> sensorReadPeriod <span style="color:#808030">=</span> <span style="color:#008c00">1000</span><span style="color:#800080">;</span>            <span style="color:#696969">// Period in ms for reading the sensor</span>
+
+
+
+SoftwareSerial mySerial<span style="color:#808030">(</span><span style="color:#008c00">0</span><span style="color:#808030">,</span><span style="color:#008c00">1</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+<span style="color:#696969">// Used to keep track of how much time has passed since the last time a sensor reading was taken</span>
+<span style="color:#800000;font-weight:bold">unsigned</span> <span style="color:#800000;font-weight:bold">long</span> lastTime <span style="color:#808030">=</span> <span style="color:#008c00">0</span><span style="color:#800080">;</span>
+<span style="color:#800000;font-weight:bold">unsigned</span> <span style="color:#800000;font-weight:bold">long</span> currentTime<span style="color:#800080">;</span>
+
+<span style="color:#696969">// Counter to mimic a sensor</span>
+<span style="color:#800000;font-weight:bold">int</span> counter<span style="color:#800080">;</span>
+
+
+<span style="color:#696969">// Setup code</span>
+<span style="color:#800000;font-weight:bold">void</span> setup<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">{</span>
+
+  mySerial<span style="color:#808030">.</span>begin<span style="color:#808030">(</span><span style="color:#008c00">9600</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+  Serial<span style="color:#808030">.</span>begin<span style="color:#808030">(</span><span style="color:#008c00">9600</span><span style="color:#808030">)</span><span style="color:#800080">;</span>                     <span style="color:#696969">// You can run the serial monitor at the same time</span>
+  
+  counter <span style="color:#808030">=</span> <span style="color:#008c00">0</span><span style="color:#800080">;</span>
+  pinMode<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> OUTPUT<span style="color:#808030">)</span><span style="color:#800080">;</span>  
+  digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> LOW<span style="color:#808030">)</span><span style="color:#800080">;</span>
+  
+<span style="color:#800080">}</span>
+
+
+<span style="color:#696969">// Read the data coming in via Serial (i.e., from the Bluetooth module)</span>
+<span style="color:#603000">String</span> readFromModule<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+
+  <span style="color:#603000">String</span> msg <span style="color:#808030">=</span> <span style="color:#800000">"</span><span style="color:#800000">"</span><span style="color:#800080">;</span>
+    
+  <span style="color:#800000;font-weight:bold">while</span><span style="color:#808030">(</span>mySerial<span style="color:#808030">.</span>available<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+    delay<span style="color:#808030">(</span><span style="color:#008c00">10</span><span style="color:#808030">)</span><span style="color:#800080">;</span>                                    <span style="color:#696969">// For program stability</span>
+    <span style="color:#800000;font-weight:bold">int</span> c <span style="color:#808030">=</span> mySerial<span style="color:#808030">.</span>read<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+    msg <span style="color:#808030">+</span><span style="color:#808030">=</span> <span style="color:#808030">(</span><span style="color:#800000;font-weight:bold">char</span><span style="color:#808030">)</span> c<span style="color:#800080">;</span>  
+  <span style="color:#800080">}</span>
+  delay<span style="color:#808030">(</span><span style="color:#008c00">10</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+  
+  <span style="color:#800000;font-weight:bold">return</span> msg<span style="color:#800080">;</span>
+<span style="color:#800080">}</span>
+
+
+<span style="color:#696969">// Main program loop</span>
+<span style="color:#800000;font-weight:bold">void</span> loop<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+
+  <span style="color:#800000;font-weight:bold">int</span> sensorValue<span style="color:#800080">;</span>
+  <span style="color:#603000">String</span> msgRx<span style="color:#800080">;</span>                                     <span style="color:#696969">// Received message from Bluetooth</span>
+  <span style="color:#603000">String</span> msgTx<span style="color:#800080">;</span>                                     <span style="color:#696969">// Message to send to Bluetooth</span>
+    
+  <span style="color:#696969">// Check for a Bluetooth message</span>
+  msgRx <span style="color:#808030">=</span> readFromModule<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+  <span style="color:#696969">// If a message was received, check the message and act accordingly</span>
+  <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>msgRx<span style="color:#808030">.</span>length<span style="color:#808030">(</span><span style="color:#808030">)</span> <span style="color:#808030">&gt;</span> <span style="color:#008c00">0</span><span style="color:#808030">)</span> <span style="color:#800080">{</span>
+      <span style="color:#800000;font-weight:bold">if</span><span style="color:#808030">(</span>msgRx <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#800000">"</span><span style="color:#0000e6">Up</span><span style="color:#800000">"</span><span style="color:#808030">)</span>
+        digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> HIGH<span style="color:#808030">)</span><span style="color:#800080">;</span>           
+      <span style="color:#800000;font-weight:bold">else</span> <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>msgRx <span style="color:#808030">=</span><span style="color:#808030">=</span> <span style="color:#800000">"</span><span style="color:#0000e6">Down</span><span style="color:#800000">"</span><span style="color:#808030">)</span>
+        digitalWrite<span style="color:#808030">(</span>ledPin<span style="color:#808030">,</span> LOW<span style="color:#808030">)</span><span style="color:#800080">;</span> 
+  <span style="color:#800080">}</span>
+
+ 
+
+  <span style="color:#696969">// Read the sensor value periodically, by checking how long ago it has been since the last reading.</span>
+  <span style="color:#696969">// A alternate, more advanced way for implementing this functionality would be using interrupts</span>
+  currentTime <span style="color:#808030">=</span> millis<span style="color:#808030">(</span><span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+  
+  <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span><span style="color:#808030">(</span><span style="color:#800000;font-weight:bold">int</span><span style="color:#808030">)</span><span style="color:#808030">(</span>currentTime <span style="color:#808030">-</span> lastTime<span style="color:#808030">)</span> <span style="color:#808030">&gt;</span> sensorReadPeriod<span style="color:#808030">)</span> <span style="color:#800080">{</span>                
+    lastTime <span style="color:#808030">=</span> currentTime<span style="color:#800080">;</span>
+         
+    <span style="color:#800000;font-weight:bold">if</span> <span style="color:#808030">(</span>DEBUG<span style="color:#808030">)</span> <span style="color:#800080">{</span>
+      sensorValue <span style="color:#808030">=</span> counter<span style="color:#800080">;</span>
+      counter <span style="color:#808030">=</span> counter <span style="color:#808030">+</span> <span style="color:#008c00">1</span><span style="color:#800080">;</span>
+    <span style="color:#800080">}</span>
+    <span style="color:#800000;font-weight:bold">else</span> 
+      sensorValue <span style="color:#808030">=</span> analogRead<span style="color:#808030">(</span>sensorPin<span style="color:#808030">)</span><span style="color:#800080">;</span>                                <span style="color:#696969">// Read from the sensor</span>
+
+    msgTx <span style="color:#808030">=</span> <span style="color:#800000">"</span><span style="color:#0000e6"> </span><span style="color:#800000">"</span><span style="color:#800080">;</span>                                                          <span style="color:#696969">// We add a blank space to the start of the message because the Bluetooth connection</span>
+    msgTx<span style="color:#808030">.</span>concat<span style="color:#808030">(</span>sensorValue<span style="color:#808030">)</span><span style="color:#800080">;</span>                                            <span style="color:#696969">// to the phone sometimes drops the first character. In this case, it would just drop</span>
+                                                                          <span style="color:#696969">// the extra blank space. In the AppInventor code, any leading spaces are removed, so </span>
+                                                                          <span style="color:#696969">// this takes care of situations where characters are dropped or not.</span>
+    
+    <span style="color:#696969">// Send the data to the Bluetooth module</span>
+    Serial<span style="color:#808030">.</span>println<span style="color:#808030">(</span>msgTx<span style="color:#808030">)</span><span style="color:#800080">;</span>
+
+  <span style="color:#800080">}</span>
+     
+         
+   
+<span style="color:#800080">}</span> <span style="color:#696969">// End of the main program loop</span>
+</pre>
+<br />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../../ssl.gstatic.com/sites/p/dc264e/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+            JOT_setupNav("5779192475161603", "Navigation Menu", false);
+            JOT_addListener('titleChange', 'JOT_NAVIGATION_titleChange', 'COMP_5779192475161603');
+          </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, 'https://gg.google.com/csi');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/a/eng.ucsd.edu/arduino-ac-workshop/advanced-tutorials/bluetooth by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Aug 2020 02:43:48 GMT -->
+</html>
